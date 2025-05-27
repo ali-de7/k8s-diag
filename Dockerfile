@@ -10,6 +10,7 @@ RUN apk add --no-cache vim
 RUN apk add --no-cache net-tools
 RUN apk add --no-cache bash
 RUN apk add --no-cache unzip
+RUN apk add --no-cache openssl
 
 # Install kubectl (latest stable)
 RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl" \
@@ -20,7 +21,7 @@ RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/s
 RUN curl -s "https://raw.githubusercontent.com/kubernetes-sigs/kustomize/master/hack/install_kustomize.sh"  | bash
 
 # Install Helm
-RUN $ curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 \
+RUN curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 \
   && chmod 700 get_helm.sh \
   && ./get_helm.sh
 
