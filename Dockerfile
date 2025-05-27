@@ -3,14 +3,15 @@ FROM alpine:latest
 
 # Install dependencies and tools
 # Install base packages
+RUN apk add --no-cache bash
+RUN apk add --no-cache vim
+RUN apk add --no-cache python3 py3-pip
+RUN apk add --no-cache openssl
+RUN apk add --no-cache net-tools
+RUN apk add --no-cache unzip
 RUN apk add --no-cache curl
 RUN apk add --no-cache wget
 RUN apk add --no-cache jq
-RUN apk add --no-cache vim
-RUN apk add --no-cache net-tools
-RUN apk add --no-cache bash
-RUN apk add --no-cache unzip
-RUN apk add --no-cache openssl
 
 # Install kubectl (latest stable)
 RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl" \
