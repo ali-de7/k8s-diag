@@ -2,18 +2,33 @@
 
 k8s-diag is an image to use for troubleshooting Kubernetes pods. The image includes the following packages out of the box:
 
-- kubectl
-- kustomize
-- helm
+#### Base packages
+
+- bash
+- vim
+- python3 py3-pip
+- openssl
+- net-tools
+- unzip
 - curl
 - wget
 - jq
-- yq
-- net-tools
-- bash
-- unzip
+
+#### Yaml Tools
+
 - gomplate
-- awscli
+- yq
+
+#### Kubernetes CLI Tools
+
+- kubectl
+- kustomize
+- helm
+
+#### Cloud CLI Tools
+
+- aws cli (v2)
+- azure cli
 
 ## Usage
 
